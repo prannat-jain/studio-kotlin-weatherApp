@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.094"
@@ -21,28 +23,33 @@
 
     <TextView
         android:id="@+id/cityTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="264dp"
+        android:layout_height="42dp"
         android:layout_marginStart="113dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="395dp"
         android:text="City"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/dateTextView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/tempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="152dp"
         android:text="0"
+        android:textColor="@android:color/black"
         android:textSize="120sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,12 +61,14 @@
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="195dp"
         android:text="Weather Description"
+        android:textColor="@android:color/black"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempTextView"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/degreeTextView"
@@ -67,18 +76,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="174dp"
-        android:text="°F"
+        android:text="°C"
         app:layout_constraintStart_toEndOf="@+id/tempTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="79dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toEndOf="@+id/degreeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/cityTextView"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:layout_width="115dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="110dp"
+        app:layout_constraintEnd_toStartOf="@+id/tempTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        app:srcCompat="@drawable/icon_raining" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
