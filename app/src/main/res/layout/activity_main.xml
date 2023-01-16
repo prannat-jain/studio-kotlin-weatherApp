@@ -62,21 +62,24 @@
         android:layout_marginBottom="195dp"
         android:text="Weather Description"
         android:textColor="@android:color/black"
+        android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempTextView"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.069" />
 
     <TextView
         android:id="@+id/degreeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="174dp"
         android:text="°C"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tempTextView"
         app:layout_constraintTop_toTopOf="parent" />
 

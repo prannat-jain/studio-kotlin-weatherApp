@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         //json request using volley for kotlin
 
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=d7a0a1ec5e18dc4f6a5023699ede1757&units=metric"
+        val url = "https://api.openweathermap.org/data/2.5/weather?q=Halifax&appid=d7a0a1ec5e18dc4f6a5023699ede1757&units=metric"
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
