@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val tempTextView = findViewById<TextView>(R.id.tempTextView)
         //java syntax: TempView tempTextView = (TextView) findViewById(R.id.tempTextView)
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
+        val timeTextView = findViewById<TextView>(R.id.timeTextView)
         val weatherTextView = findViewById<TextView>(R.id.weatherDescTextView)
         val cityTextView = findViewById<TextView>(R.id.cityTextView)
         val weatherImageView = findViewById<ImageView>(R.id.imageView2)
@@ -55,6 +56,11 @@ class MainActivity : AppCompatActivity() {
 
                 val city: String = response.getString("name")
                 cityTextView.text = city
+
+                val timeZone: Int = response.getInt("timezone")
+                val timeZoneInMinutes = timeZone/60
+                val timeString: String = timeZoneInMinutes.toString()
+                timeTextView.text = timeString
 
 
                 //image set as per weather
