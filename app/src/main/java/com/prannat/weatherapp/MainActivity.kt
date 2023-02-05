@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val dateTextView = findViewById<TextView>(R.id.dateTextView)
         val weatherTextView = findViewById<TextView>(R.id.weatherDescTextView)
         val cityTextView = findViewById<TextView>(R.id.cityTextView)
+        val timeTextView = findViewById<TextView>(R.id.timeTextView)
         val weatherImageView = findViewById<ImageView>(R.id.imageView2)
         weatherImageView.setImageResource(R.drawable.icon_sunny)
 
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         //json request using volley for kotlin
 
         val url = "https://api.openweathermap.org/data/2.5/weather?q=Halifax&appid=d7a0a1ec5e18dc4f6a5023699ede1757&units=metric"
+        val timeUrl = "https://www.timeapi.io/api/Time/current/zone?timeZone=America/Halifax"
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
             { response ->
@@ -66,10 +68,27 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
+        val jsonTimeRequest = JsonObjectRequest(Request.Method.GET, timeUrl, null,
+            { response ->
+
+                val hourObj: String = response.getInt("hour").toString()
+                val minObj: String = response.getInt("minute").toString()
+
+                timeTextView.text = hourObj + " : " + minObj;
+
+            },
+            {
+                error ->
+                // HANDLE ERROR
+            }
+        )
+
+
 // Access the RequestQueue through your singleton class.
         var queue: RequestQueue? = null
         queue = Volley.newRequestQueue(this)
         queue.add(jsonObjectRequest)
+        queue.add(jsonTimeRequest)
 
     }
     private fun getCurrentDate(): String {
