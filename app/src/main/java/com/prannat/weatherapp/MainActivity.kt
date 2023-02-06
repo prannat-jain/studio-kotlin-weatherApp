@@ -72,7 +72,12 @@ class MainActivity : AppCompatActivity() {
             { response ->
 
                 val hourObj: String = response.getInt("hour").toString()
-                val minObj: String = response.getInt("minute").toString()
+                var minObj: String = response.getInt("minute").toString()
+
+
+                if(minObj.length == 1){
+                    minObj = "0" + minObj;
+                }
 
                 timeTextView.text = hourObj + " : " + minObj;
 
